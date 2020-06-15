@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/vue.min.js"></script>
+    <script src="./js/vue-resource.min.js"></script>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/myIndex.css">
+    <title>Alimu</title>
+    <style lang="">
+       
+    </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+        
+        <div class="container">
+            <!-- 导航 -->
+            <nav class="navbar navbar-default navbar-fixed-top">
+                
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+                        </button>
+                        <a href="#" class="navbar-brand">Main Page</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav navbar-right"> 
+                            <li><a href="#about">关于</a></li>
+                            <li><a href="#service">近期工作</a></li>
+                            <li><a href="#portfolio">兴趣爱好</a></li>
+                            <li><a href="#daily">日常生活</a></li>
+                            <li><a href="#contact">联系我</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </nav>
+            <br><br>
+            <!-- 巨幕 -->
+            <div class="jumbotron text-center">
+                <br> <br> <br> <br> <br> 
+                <h1>Hi You！ </h1>
+                <p>Welcome to You</p>
+
+                <form action="" class="form-inline">
+                    <input type="text" class="form-control" size="50" placeholder="Search What You Want">
+                    <button type="button" class="btn btn-danger">Search</button>
+                </form>
+
+                <br> <br> <br> <br> <br> 
+            </div>
+
+            <!-- 关于我 -->
+            <div id="about" class="container-fluid">
+                
+                <div class="row">
+                    <div class="col-sm-8 text-center">
+                        <h2>About Me </h2>
+                        <h4>A Student Of SZU</h4>
+                        <p>Major : Software Engineering</p>
+                        <p>From  : XinJiang Qashgar</p>
+                        <br> <br>
+                        <button class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal-lg">Get in Touch</button>
+                    </div>
+                    <br> <br>
+                    <div class="col-sm-4 text-center">
+                        <!-- <span class="glyphicon glyphicon-signal logo"></span> -->
+                        <img src="./szu.jpg" alt="" style="height:200px ; width:200px;">
+                    </div>
+                </div>
+            </div>
+
+            <div id="value" class="container-fluid bg-grey text-center">
+                
+                <div class="row">
+                    <div class="col-sm-4">
+                        <span class="glyphicon glyphicon-blackboard logo"></span>
+                    </div>
+                    <div class="col-sm-8 text-center">
+                        <h2>My Skills</h2>
+                        <h4>web development</h4>
+                        <p>HTML/CSS/JAVASCRIPT/BOOTSTRAP</p>
+                        <p>HTTP/AJAX/JSON/NODE/VUE/MYSQL</p>
+                    </div>
+                </div>
+                
+            </div>
+            <div id="service" class="container-fluid text-center">
+                    <h2>Recent Work</h2>
+                    <h4>Some Small Projects</h4>
+                    <br>
+                    
+                    <div class="row ">
+                       <!-- <div class="col-sm-4 panel">
+                            <a href="http://shuqibang.com" target="_blank">
+                                   <img src="./img/news.png" alt="">
+                            </a>
+                                
+                                <h4>企业官网</h4>
+                                <p>实习时期做的企业官网</p>
+                        </div>-->
+                        <div class="col-sm-4 panel">
+                                <a href="#">
+                                        <img src="./img/tree.jpg" alt="">
+                                 </a>
+                                <h4>MessageBoard</h4>
+                                <p>A message board to share stories</p>
+                        </div>
+                        <div class="col-sm-4 panel">
+                                <a href="./todolist.html">
+                                        <img src="./img/todo1.png" alt="">
+                                 </a>
+                                <h4>Todo List</h4>
+                                <p>Keep your to-do list simple</p>
+                        </div>
+                    </div>
+                   
+                    
+
+            </div>
+            <div id="portfolio" class="container-fluid text-center bg-grey"> 
+                <h2>My Favorite Sports </h2> <br>
+                <div class="row text-center">
+                    <div class="col-sm-4">
+                        <div class="thumbnail">
+                            <img src="./img/swimming.jpg" alt="" class="myImg">
+                            <p><strong>Swimming</strong></p>
+                            <p>Swimming is an individual or team racing sport that requires the use of one's entire body to move through water.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                            <div class="thumbnail">
+                                <img src="./img/runnig.jpg" alt="">
+                                <p><strong>Runnig</strong></p>
+                                <p>Running is a method of terrestrial locomotion allowing humans and other animals to move rapidly on foot</p>
+                            </div>
+                    </div>
+                    <div class="col-sm-4">
+                            <div class="thumbnail">
+                                <img src="http://img1.imgtn.bdimg.com/it/u=3211873941,1270086014&fm=214&gp=0.jpg" alt="">
+                                <p><strong>Basketball</strong></p>
+                                <p> Basketball means basket ball. It is now loved by the majority of young people and enthusiasts. </p>
+                            </div>
+                    </div>
+                    <h2>My Favorite Films</h2>
+                    <div id="daily" class="carousel slide text-center" data-ride="carousel">
+                        <!-- 轮播指标 -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#daily" data-slide-to="0" class="active"></li>
+                            <li data-target="#daily" data-slide-to="1" ></li>
+                            <li data-target="#daily" data-slide-to="2" ></li>
+                        </ol>
+                        <!-- 轮播项目 -->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                    <div class="img_area"><img src="./img/rest.jpg" alt=""style="width:40%;"></div>
+                                    <div class="carousel-caption">at school</div>
+                            </div>
+                            <div class="item">
+                                    <div class="img_area"><img src="./img/bro.jpg" alt=""style="width:40%;"></div>
+                                    <div class="carousel-caption">with my brother</div>
+                            </div>
+							<div class="item">
+							    <div class="img_area"><video src="./img/video_1.mp4"controls="controls"></video></div>
+							    <div class="carousel-caption">请点击屏幕中间观看，双击放大</div>
+							</div>
+                        </div>
+                        <!-- 轮播控制器 -->
+                        <a href="#daily" class="carousel-control left " data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                        </a>
+                        <a href="#daily" class="carousel-control right " data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- <div id="pricing" class="container-fluid">
+                <div class="text-center">
+                        <h2>Black Space  </h2>
+                        <h4>bala bala bala bala bala bala  </h4>
+                </div>
+                
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="panel panel-default text-center">
+                            <div class="panel-heading">
+                                <h1>bala</h1>
+                            </div>
+                            <div class="panel-body">
+                                <p>bala bala bala bala bala bala </p>
+                                <p>bala bala bala bala bala bala </p>
+                                <p>bala bala bala bala bala bala </p>
+                                <p>bala bala bala bala bala bala </p>
+                            </div>
+                            <div class="panel-footer">
+                                <h3>$10</h3>
+                                <h4>ba la b la </h4>
+                                <button class="btn btn-lg">Button</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                            <div class="panel panel-default text-center">
+                                    <div class="panel-heading">
+                                            <h1>bala</h1>
+                                        </div>
+                                        <div class="panel-body">
+                                            <p>bala bala bala bala bala bala </p>
+                                            <p>bala bala bala bala bala bala </p>
+                                            <p>bala bala bala bala bala bala </p>
+                                            <p>bala bala bala bala bala bala </p>
+                                        </div>
+                                        <div class="panel-footer">
+                                            <h3>$10</h3>
+                                            <h4>ba la b la </h4>
+                                            <button class="btn btn-lg">Button</button>
+                                        </div>
+                            </div>
+                    </div>
+                    <div class="col-sm-4">
+                            <div class="panel panel-default text-center">
+                                    <div class="panel-heading">
+                                            <h1>bala</h1>
+                                        </div>
+                                        <div class="panel-body">
+                                            <p>bala bala bala bala bala bala </p>
+                                            <p>bala bala bala bala bala bala </p>
+                                            <p>bala bala bala bala bala bala </p>
+                                            <p>bala bala bala bala bala bala </p>
+                                        </div>
+                                        <div class="panel-footer">
+                                            <h3>$10</h3>
+                                            <h4>ba la b la </h4>
+                                            <button class="btn btn-lg">Button</button>
+                                        </div>
+                    </div>
+                </div>
+                
+
+            </div> -->
+            <div id="contact" class="container-fluid bg-grey" >
+                <h2 class="text-center">CONTACT</h2>
+                
+                <div class="row" >
+                    <div class="col-sm-5">
+                        <p>Welcome you to send me a message</p>
+                        <p>I will reply to you as soon as possible</p>
+                    </div>
+                    <div class="col-sm-7" id="app">
+                        
+                        <div class="row">
+                            <div class="col-sm-6 form-group">
+                                <input type="text" name="name" id="" class="form-control" placeholder="Your Name" required  v-model='name' required>
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <input type="email" name="email" id="" class="form-control" placeholder="Your Email " required v-model='email' required>
+                            </div>
+                        </div>
+                        <textarea name="comments" id="" cols="30" rows="5" placeholder="Your Message , Less Than 200 Words" class="form-control" v-model='message' required></textarea><br>
+                        
+                        <div class="row">
+                            <div class="col-sm-12 form-group">
+                                <button class="btn btn-default pull-right" type="button" @click="send()" data-loading-text="正在发送中..."  id="send" >Send</button>
+                            </div>
+                        </div>
+                            
+                    </div>
+                </div>
+                
+            </div>
+            <footer class="container-fluid text-center">
+                <a href="#myPage" title="To Top">
+                    <span class="glyphicon glyphicon-chevron-up"></span>
+                </a>
+                <p>Alimjan. Abla 2019</p>
+            </footer>
+        </div>
+
+        <!-- 组件  弹出联系方式 -->
+        <div class="container">
+                <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal-lg">
+                    modal大模态框
+                </button> -->
+                
+                <div class="modal fade" id="myModal-lg">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">关闭</button>
+                                <h4 class="modal-title">联系方式</h4>
+                            </div>
+                            <div class="modal-body text-center">
+                                <h4>WeChat</h4>
+                              <p>
+                                    <img src="./img/WeChatCard.jpg" alt="" style="height: 200px; width: 200px;">
+                              </p>
+                            </div>
+                            <div class="modal-footer ">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">
+                                    关闭
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+        
+                </div>
+        </div>
+        <script>
+                new Vue({
+                    el: '#app',
+                    data: {
+                        name:'',
+                        email:'',
+                        message:'',
+                    },
+                    methods:{
+                        send(){
+                            console.log("name:"+this.name)
+                            console.log("email:"+this.email)
+                            console.log("message:"+this.message)
+                            var url = "/fromIndex?name="+this.name+ "&message="+ this.message+ "&email=" + this.email
+                            $("#send").button('loading')
+                            this.$http.get(url).then(function(res){
+                                 //document.write(res.body);
+                                 console.log(res.body)
+                                 if(res.body.code===200){
+                                    $("#send").button('reset')
+                                 }
+                                 else{
+                                    alert('服务器遇到问题了，暂时不支持留言功能')
+                                 }
+                                },function(){
+                                    alert('服务器遇到问题了，暂时不支持留言功能')
+                            });
+                        }
+                    }
+                })
+        </script>
+</body>
+</html>
