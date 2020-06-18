@@ -137,3 +137,20 @@ footer .glyphicon{
 .jumotron{
     margin-top: 50px;
 }
+.top{
+	display:flex;
+}
+.top .btn{
+	margin-left: 5%;
+	width:15%;
+}
+.top .input-group{
+	width:80%;
+	border:none;
+	border-bottom: dimgray 1px solid;
+}
+.todo_item{
+	display:flex;
+	margin-top:10px;
+	border-top: limegreen 2px solid;
+}

@@ -1,7 +1,3 @@
-<!-- 
-    仅用于学习！所有代码都在这里，有问题请联系我QQ:1317426768
-    不会收集用户的任何数据，数据都是保存在浏览器缓存，不同的浏览器数据不通
- -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,157 +5,55 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="./js/jquery.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
-    <script src="./js/vue.min.js"></script>
+    <script src="./js/vue.min.js"></script> 
     <script src="./js/vue-resource.min.js"></script>
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/myIndex.css">
-    <style>
-        li,a,p{
-            flood-color: blue;
-            font-weight:700;
-            font-size: 20;
-        }
-    </style>
     <title>Vue Todo List</title>
 </head>
-<body style="color:rgb(80,80,80)">
-<div class="container">
-    <div id="app" > 
-        <div class="row">
-                    <h1>数据存储在浏览器缓存-放心使用！</h1>
-        </div>
-
-        <div class="row"> <hr> </div>
-
-        <div class="row">
-                <div class="row">
-                        <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
-                            <div class="input-group">
-                                    <input type="text" class="form-control" v-model="id" v-focus  @keyup.enter="add">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default" style="background-color: limegreen;"type="button" @click="add()">Add</button>
-                                </span>
-                            </div> 
-                        </div>
-                </div>
-
-        <div class="row"> <hr> </div>
-       
-        <section>
-            <h2> 待办事项 </h2>
-            <ol>
-                <div class="row" v-for="item in list">
-                    <li v-if="item.isDone == false">
-                            <div class="col-lg-10"><p style="border: coral 2px solid;background-color: lightgray;">{{item.thing}}</p></div>
-                            <div class="col-lg-2"style="float: right;"><button style="background-color: red;color: white;" class="btn "@click.prevent="del(item.thing)">delete</button></div>
-                    </li>
-                </div> 
-            </ol>
-        </section>
-
-        <section>
-            <h2> 完成事项 </h2>
-            <ol>
-                <div class="row" v-for="item in list">
-                    <li v-if="item.isDone == true">
-                            <div class="col-lg-10"> <a href=""><p   @click="todo(item.thing,false)" >{{item.thing}}</p></a></div>
-                            <div class="col-lg-1"><a href="" @click.prevent="del(item.thing)">del</a></div>
-                    </li>
-                </div> 
-            </ol>        
-        </section>
-           
-    </div>
-</div>
-    <script>
-          Vue.directive('focus',{
-            bind:function(el){ //每当指令绑定到元素身上的时候会立即执行这个bind函数，只执行一次
-                //el.focus();  //el表示被绑定的那个元素，这个el是一个原生的
-            },
-            inserted:function(el){ //表示元素插入到dom中的时候会执行insert函数
-                el.focus();
-            },
-            updated:function(){ //当vnode更新的时候会执行，可能会触发多次
-
-            }
-        })
-
-        var vm = new Vue({
-            el:'#app',     
-            data:{
-             msg:"welcome to todolist!",
-       
-             list:this.getData ,
-             id:'',
-             test:this.getTest,
-            },
-            methods :{
-                done(key,value){
-                    for(var i=0 ;i<this.list.length ; i++){
-                        if(this.list[i].thing==key){
-                            this.list[i].isDone=value;
-                        }
-                    }
-                    this.saveData(this.list);
-                   // alert(key + value);
-                },
-                todo(key,value){
-                    for(var i=0 ;i<this.list.length ; i++){
-                        if(this.list[i].thing==key){
-                            this.list[i].isDone=value;
-                        }
-                    }
-                    this.saveData(this.list);
-                   // alert(key + value);
-                },
-                add(){
-                    this.list.push({thing:this.id , isDone:false});
-                    this.saveData(this.list);
-                   
-                },
-               
-                saveData(data){
-                    localStorage.setItem("list", JSON.stringify(data));   //JS对象转换成JSON对象存进本地缓存
-                },
-                getData(){
-                    var hisTory = localStorage.getItem("list");
-                    if(hisTory !=null){
-                       return JSON.parse(hisTory);     //JSON对象转换为JS对象
-                    }
-                    else { return []; }
-                },
-                del(thing){
-                    //alert(thing);
-                    var index = this.list.findIndex(item=>{
-                    if(item.thing==thing){
-                        return true;
-                    }
-                });
-                this.list.splice(index,1);
-                this.saveData(this.list);
-                }
-             
-            },
-            beforeCreate(){
-             //beforeCreate 执行的时候 data 和 methods 中的数据都没被初始化   
-            },
-            created(){
-                //在created中 data 和methods 都被初始化了
-            },
-            beforeMount(){
-                //第三个声明周期：模版已经编译完成了，但是尚未把模版渲染到页面中去
-                //他执行的时候页面中的元素还没有被替换{{msg}}
-                
-                this.list = this.getData();
-                console.log(this.list);
-
-            },
-            mounted(){
-                //这是第四个周期，表示内存中的模版已经真实的挂在到页面中，用户可以看到已经渲染好的页面
-                
-            }
-
-        })
-    </script>
+<body style="color:rgb(100,100,100)">
+	<div class="container text-center"id="app">
+		<h3>Vue Todo List</h3>
+		<div class="top"><input type="text"class="input-group"v-model="todo"placeholder="请输入:"><input type="button"class="btn btn-success"value="Submit"@click="pushData(todo)"></div>
+		<div class="todo_item"v-for="item in items">
+			<p>{{item.id}}{{item.title}}</p><p>time</p>
+			<input type="button"class="btn btn-success"value="完成"@click="moveData(item)">
+			<input type="button"class="btn btn-danger"value="删除"@click="deleteData(item)">
+			</div>
+	</div>
+	<script>
+		var vm=new Vue({
+			el:'#app',
+			data:{
+				todo:'',
+				items:[],
+				value:1,
+			},
+			methods:{
+				pushData:function(){
+					if(this.todo==''){
+						alert('输入内容不能为空！');
+					}
+					else{
+						this.items.push({
+							title:this.todo,
+							id:this.items.length+1
+						})
+					}
+					this.todo=''
+				},
+				deleteData:function(todo){
+                   var index = this.items.indexOf(todo)
+					this.items.splice(index,1)
+				}
+			},
+			change:function(index){
+				for(var i=index;i>=index;i++){
+					
+				}
+			}
+			
+		})
+	</script>
 </body>
 </html>
